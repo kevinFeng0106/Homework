@@ -1,0 +1,823 @@
+// 头部顶部的高度
+@headerTopHeight: 30px;
+
+html,
+body {
+    height: 100%;
+}
+
+#wrapper {
+    #header {
+
+        // 上面部分
+        .headTop {
+            background-color: #eaeaea;
+            height: @headerTopHeight;
+
+            .headerTopMain {
+                width: 1200px;
+                // 居中
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+
+                .left {
+                    height: @headerTopHeight;
+                    display: flex;
+                    align-items: center;
+
+                    h5 {}
+
+                    p {
+                        a {
+                            &:first-child {
+                                border-right: 1px solid #b3aeae;
+                                padding-right: 5px;
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    height: @headerTopHeight;
+                    display: flex;
+                    align-items: center;
+
+                    nav {
+                        // 给父元素添加该样式，可以去除行内元素之间的槽宽
+                        font-size: 0;
+
+                        a {
+                            font-size: 12px;
+                            border-right: 1px solid #b3aeae;
+                            padding-right: 8px;
+                            margin-right: 8px;
+
+                            &:last-child {
+                                border: none;
+                                margin: 0;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 下面部分
+        .headBottom {
+            .headerBottomMain {
+                width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .logo {
+                    a {
+                        img {
+                            width: 175px;
+                            height: 56px;
+                            margin: 25px 45px;
+                        }
+                    }
+                }
+
+                .search {
+                    display: flex;
+                    align-items: center;
+                    //margin-top: 35px;
+
+                    input[type='text'] {
+                        box-sizing: border-box;
+                        width: 490px;
+                        height: 32px;
+                        padding: 0 4px;
+                        border: 2px solid #ea4a36;
+                    }
+
+                    input[type='submit'] {
+                        width: 69px;
+                        height: 32px;
+                        color: #fff;
+                        background-color: #ea4a36;
+                        outline: none;
+                        border: none;
+                        margin-left: -5px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    // 分类导航
+    #navWrap {
+        border-bottom: 2px solid #e1251b;
+
+        .navWrapMain {
+            width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+
+            a {
+                margin: 0 22px;
+                font-size: 16px;
+                color: #333;
+
+                &:first-child {
+                    text-align: center;
+                    line-height: 50px;
+                    width: 210px;
+                    height: 50px;
+                    background-color: #e1251b;
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    // 内容区域
+    #content {
+        .contentMain {
+            width: 1200px;
+            margin: 0 auto;
+
+            #navPath {
+                // 清除默认槽宽
+                font-size: 0;
+                padding: 15px 15px 9px 0;
+
+                a {
+                    font-size: 12px;
+                }
+
+                i {
+                    font-size: 12px;
+                    padding: 0 5px;
+                }
+            }
+
+            // 中间区域
+            #center {
+                margin: 5px 0 15px;
+                display: flex;
+                justify-content: space-between;
+
+                #left {
+                    width: 400px;
+
+                    #leftTop {
+                        height: 400px;
+                        width: 400px;
+                        position: relative;
+
+                        #smallPic {
+                            position: absolute;
+                            width: 400px;
+                            height: 400px;
+                            border: 1px solid #dfdfdf;
+
+                            img {}
+
+                            .mask {
+                                display: none;
+                                width: 200px;
+                                height: 200px;
+                                background-color: rgba(255, 255, 255, .5);
+                                border: 1px solid #ddd;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                            }
+                        }
+
+                        #bigPic {
+                            display: none;
+                            position: absolute;
+                            width: 400px;
+                            height: 400px;
+                            border: 1px solid #ddd;
+                            left: 420px;
+                            top: 0;
+                            overflow: hidden;
+
+                            img {
+                                position: absolute;
+                                height: 800px;
+                                width: 800px;
+
+                            }
+                        }
+                    }
+
+                    #leftBottom {
+                        width: 400px;
+                        margin-top: 5px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        a {
+                            border: 1px solid #ccc;
+                            background-color: #ebebeb;
+                            height: 50px;
+                            line-height: 50px;
+
+                            &:first-child {
+                                margin-right: 4px;
+                            }
+
+                            &:last-child {
+                                margin-left: 4px;
+                            }
+                        }
+
+                        #piclist {
+                            position: relative;
+                            width: 372px;
+                            height: 56px;
+                            margin-right: -15px;
+                            overflow: hidden;
+
+                            ul {
+                                position: absolute;
+                                display: flex;
+                                justify-content: space-between;
+                                transition: .6s;
+
+                                li {
+                                    height: 50px;
+                                    width: 50px;
+                                    border: 1px solid #ccc;
+                                    padding: 2px;
+                                    margin-right: 20px;
+
+                                    img {
+                                        width: 50px;
+                                        height: 50px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #right {
+                    width: 700px;
+
+                    .rightTop {
+                        h3 {
+                            font-style: 14px;
+                            line-height: 21px;
+                            margin-top: 15px;
+                        }
+
+                        >p {
+                            color: #e12228;
+                            margin-top: 15px;
+                        }
+
+                        .priceWrap {
+                            margin-top: 10px;
+                            line-height: 28px;
+                            background-color: #fee9ec;
+                            padding: 7px;
+
+                            .priceTop {
+                                display: flex;
+
+                                >span {
+                                    margin-right: 15px;
+                                }
+
+                                .price {
+                                    display: flex;
+
+                                    >span {
+                                        color: #cc1122;
+                                        font-size: 16px;
+                                    }
+
+                                    p {
+                                        color: #cc1122;
+                                        font-weight: 700;
+                                        font-size: 24px;
+                                    }
+
+                                    i {
+                                        font-style: 12px;
+                                        color: #cc1122;
+                                    }
+                                }
+
+                                p {
+                                    // 设置为auto的边距将吸收所有剩余可用空间
+                                    margin-left: auto;
+
+                                    >span {}
+                                }
+                            }
+
+                            .priceBottom {
+                                width: 520px;
+                                line-height: 28px;
+                                display: flex;
+
+                                >span {}
+
+                                p {
+                                    margin-left: 20px;
+
+                                    >span {
+                                        color: #999;
+
+                                        // 加价购
+                                        &:first-child {
+                                            background-color: #c81623;
+                                            color: #fff;
+                                            padding: 2px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .support {
+                            display: flex;
+                            padding-bottom: 5px;
+                            margin-top: 10px;
+                            line-height: 28px;
+
+                            >span {}
+
+                            p {
+                                color: #999;
+                                margin-left: 20px;
+                            }
+                        }
+
+                        .address {
+                            display: flex;
+                            display: flex;
+                            padding-bottom: 5px;
+                            //margin-top: 10px;
+                            line-height: 28px;
+                            border-bottom: 1px solid #ededed;
+
+                            >span {}
+
+                            p {
+                                color: #999;
+                                margin-left: 15px;
+                            }
+                        }
+                    }
+
+                    .rightBottom {
+                        .choose {
+                            display: flex;
+                            margin-top: 10px;
+
+                            #mark {
+                                height: 30px;
+                                background-color: snow;
+                                border: 1px solid #ddd;
+                                padding: 0 20px;
+                                margin-right: 20px;
+                                text-align: center;
+                                line-height: 30px;
+
+                                a {
+                                    color: red;
+                                    margin-left: 20px;
+                                }
+                            }
+                        }
+
+                        .chooseWrap {
+                            margin-top: 10px;
+                            line-height: 28px;
+
+                            dl {
+                                display: flex;
+                                margin: 13px 0;
+
+                                dt {
+                                    margin-right: 15px;
+                                }
+
+                                dd {
+                                    margin-right: 5px;
+                                    color: #666;
+                                    line-height: 24px;
+                                    padding: 2px 14px;
+                                    border-top: 1px solid #eee;
+                                    border-left: 1px solid #eee;
+                                    border-bottom: 1px solid #bbb;
+                                    border-right: 1px solid #bbb;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+
+                        .addCart {
+                            display: flex;
+                            align-items: center;
+
+                            .count {
+                                width: 55px;
+                                margin-right: 15px;
+                                position: relative;
+
+                                input {
+                                    width: 38px;
+                                    height: 37px;
+                                    border: 1px solid #ddd;
+                                    color: #555;
+                                    text-align: center;
+                                }
+
+                                a {
+                                    position: absolute;
+                                    right: 0.5px;
+                                    width: 15px;
+                                    height: 18px;
+                                    color: #666;
+                                    background-color: #f1f1f1;
+                                    text-align: center;
+
+                                    &:first-child {
+                                        top: 0;
+                                    }
+
+                                    &:last-child {
+                                        top: 21px;
+                                    }
+                                }
+                            }
+
+                            button {
+                                padding: 0 25px;
+                                outline: none;
+                                height: 36px;
+                                font-size: 16px;
+                                background-color: #e1251b;
+                                border: none;
+                                color: #fff;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 商品详情（下部分）
+            .goodsDetailWrap {
+                width: 1200px;
+                margin: 30px auto 0;
+                position: relative;
+
+                .leftAside {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 210px;
+                    border: 1px solid #ccc;
+
+                    .asideTop {
+                        display: flex;
+
+                        h4 {
+                            height: 40px;
+                            line-height: 40px;
+                            width: 105px;
+                            text-align: center;
+                            background-color: #fff;
+                            border-bottom: 1px solid #ccc;
+                            border-top: 1px solid #fff;
+                            cursor: pointer;
+
+                            &.active {
+                                border-top: 1px solid #e1251b;
+                                border-bottom: none;
+                            }
+                        }
+                    }
+
+                    .asideContent {
+                        padding: 10px;
+
+                        div {
+                            &.active {
+                                .goodslist1 {
+                                    display: flex;
+                                    flex-wrap: wrap;
+
+                                    li {
+                                        text-align: center;
+                                        width: 50%;
+                                        border-bottom: 1px dashed #ededed;
+                                        line-height: 28px;
+                                    }
+                                }
+
+                                .goodslist2 {
+                                    margin: 5px 0 15px;
+
+                                    li {
+                                        border-bottom: 1px solid #ededed;
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+
+                                        img {
+                                            width: 152px;
+                                        }
+
+                                        span {}
+
+                                        p {
+                                            font-size: 16px;
+                                            color: #c81623;
+                                        }
+
+                                        .button {
+                                            margin-top: 5px;
+                                            margin-bottom: 5px;
+
+                                            a {
+                                                color: #8c8c8c;
+                                                padding: 2px 14px;
+                                                line-height: 18px;
+                                                border: 1px solid #8c8c8c;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .rightDetail {
+                    width: 980px;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    .chooseBox {
+                        border: 1px solid #ddd;
+                        margin-bottom: 15px;
+
+                        h4 {
+                            border-bottom: 1px solid #ddd;
+                            background-color: #f1f1f1;
+                            color: #333;
+                            padding: 5px 0 5px 15px;
+                        }
+
+                        .listWrap {
+                            height: 170px;
+                            padding-top: 10px;
+                            display: flex;
+                            justify-content: space-between;
+
+                            .left {
+                                position: relative;
+                                width: 127px;
+                                height: 165px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: center;
+
+                                img {
+                                    width: 87px;
+                                }
+
+                                p {
+                                    color: #c81623;
+                                    font-size: 16px;
+                                }
+
+                                i {
+                                    position: absolute;
+                                    top: 48px;
+                                    right: -25px;
+                                    font-size: 16px;
+                                }
+                            }
+
+                            .middle {
+                                width: 668px;
+                                height: 165px;
+                                display: flex;
+
+                                li {
+                                    width: 127px;
+                                    margin: 0 20px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+
+                                    img {
+                                        width: 120px;
+                                        height: 130px;
+                                    }
+
+                                    >span {}
+
+                                    div {
+                                        input {}
+
+                                        span {}
+                                    }
+                                }
+                            }
+
+                            .right {
+                                border-left: 1px solid #ddd;
+                                width: 153px;
+                                height: 165px;
+                                padding-left: 20px;
+
+                                div {
+                                    margin: 10px 0;
+                                }
+
+                                p {
+                                    font-weight: 700;
+                                    margin-bottom: 10px;
+                                }
+
+                                i {
+                                    color: #b1191a;
+                                    font-size: 16px;
+                                    margin-bottom: 10px;
+                                }
+
+                                button {
+                                    padding: 10px 25px;
+                                    font-size: 16px;
+                                    color: #fff;
+                                    background-color: #e1251b;
+                                    border: none;
+                                    outline: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .BottomDetail {
+
+                        // 菜单
+                        .tabBtns {
+                            display: flex;
+                            background-color: #ededed;
+
+                            li {
+                                border: 1px solid #ddd;
+                                border-right: none;
+
+                                &:last-child {
+                                    border-right: 1px solid #ddd;
+                                }
+
+                                background-color: #fff;
+                                height: 40px;
+                                line-height: 40px;
+                                padding: 0 11px;
+
+                                &.active {
+                                    background-color: red;
+
+                                    a {
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+
+                        .tabContents {
+                            margin-bottom: 10px;
+
+                            div {
+                                padding-left: 20px;
+                                line-height: 25px;
+
+                                &.active {
+                                    margin: 10px 0;
+                                }
+
+                                ul {
+                                    li {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 侧边栏
+    .rightAside {
+        width: 300px;
+        height: 100%;
+        background-color: #7a6e6e;
+        transition: 0.5s;
+        position: fixed;
+        top: 0;
+
+        &.asideClose {
+            right: -294px;
+        }
+
+        &.asideOpen {
+            right: 0;
+        }
+
+        .btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 5px 0 0 5px;
+            background-color: #7a6e6e;
+            position: absolute;
+            left: -29px;
+            background-size: 35px 35px;
+            cursor: pointer;
+
+            &.btnClose {
+                background-image: url('../images/list.png');
+            }
+
+            &.btnOpen {
+                background-image: url('../images/cross.png');
+            }
+        }
+
+
+        .content {
+            width: 294px;
+            height: 100%;
+            background-color: bisque;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 6px;
+            z-index: 10;
+        }
+
+        .navlist {
+            position: absolute;
+            left: -29px;
+            // 垂直居中
+            top: 50%;
+            transform: translateY(-50%);
+
+            li {
+                display: flex;
+                align-items: center;
+                background-color: #7a6e6e;
+                height: 35px;
+                width: 35px;
+
+                p {
+                    height: 35px;
+                    width: 35px;
+                    background-image: url(../images/toolbars.png);
+                    background-position: -87px -174px;
+                    transition: 0.5s;
+                    cursor: pointer;
+                }
+
+                i {
+                    position: absolute;
+                    left: 35px;
+                    height: 35px;
+                    line-height: 35px;
+                    width: 50px;
+                    transition: 0.5s;
+                    padding: 0 5px;
+                    background-color: #7a6e6e;
+                }
+
+                &:hover {
+                    P {
+                        background-color: pink;
+                    }
+
+                    i {
+                        left: -60px;
+                        background-color: pink;
+                    }
+                }
+            }
+        }
+
+    }
+}
